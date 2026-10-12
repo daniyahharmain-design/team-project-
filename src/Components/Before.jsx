@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Before.css'
 import {
   investments,
   newLimitedPartnes,
@@ -8,7 +9,7 @@ import LimitedPatner from "./LimitedPatner";
 import TotalSection from "./TotalSection";
 import Companies from "./Companies";
 
-const Before = () => {
+const Before = ({lpArr}) => {
   const [limitedPartners, setLimitedPartners] = useState(
     PrevLimitedPartners.concat(newLimitedPartnes),
   );
@@ -38,18 +39,21 @@ const Before = () => {
     }
   });
 
+  
+
   return (
-    <div>
+    <div className="body" >
       <div className="top-section" >
  <TotalSection bigObj={limitedPartners} objName="Limited Partners" />
  <TotalSection bigObj={investments} objName = "Companies" />
+
       </div>
-     
 
       <div className="lp-container">
-        {limitedPartners.map((elem, index) => {
+     {lpArr === undefined ? <div> waiting </div> :  lpArr.map((elem, index) => {
           return <LimitedPatner lpDetails={elem} key={index} />;
-        })}
+        })} 
+       
 
           </div>
         <div>
