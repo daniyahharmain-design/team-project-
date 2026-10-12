@@ -3,15 +3,20 @@ const LimitedPatner = ({ lpDetails }) => {
     lpDetails;
 
   return (
-    <div className="lp-card-container ">
-    
+    <div className="lp-card ">
       <div className="name">
-        Name: <h2> {" " + name}</h2>
+        <div className="name-circle"></div> <h2> {" " + name}</h2>
       </div>
-
-      <p>Commitment: {commitment} </p>
-      <p>OwnerShip: {invidualPercentage} </p>
-      <p>CapitalCall: {capitalCall} </p>
+      <div className="div-2">
+        <div>
+          <h4>{commitment} </h4>
+          <p>Commitment</p>
+        </div>
+        <div>
+          <h4>{invidualPercentage}</h4>
+          <p>Ownership</p>
+        </div>
+      </div>
     </div>
   );
 };

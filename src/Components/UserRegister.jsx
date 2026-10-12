@@ -78,7 +78,7 @@ const UserRegister = () => {
         </button>
       </div>
 <div>
-     <Before lpArr = {limitedPartners} />
+     <Before LpArr = {limitedPartners} />
 </div>
  
     </div>
