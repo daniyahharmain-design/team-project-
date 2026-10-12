@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./UserRegister.css";
 import Before from "./Before";
+import { CompanyRegister } from "./CompanyRegister";
 
 const UserRegister = () => {
   let arr = [];
@@ -14,11 +15,11 @@ const UserRegister = () => {
   return (
     <div className="container">
       <div className="inner-container">
-        <h1 className="heading">LimitedPartner Information</h1>
+        <h1 className="heading">LIMITED-PARTNERS INFORMATION</h1>
 
-        <div className="inpt-div" >
+        <div className="inpt-div">
           {" "}
-          <label htmlFor="fullName">Full Name : </label>
+          <label htmlFor="fullName">FULL NAME : </label>
           <input
             id="fullName"
             className="inpt-box"
@@ -30,9 +31,9 @@ const UserRegister = () => {
             placeholder="Enter your Full Name"
           />
         </div>
-        <div className="inpt-div" >
+        <div className="inpt-div">
           {" "}
-          <label htmlFor="commitment">Commitment :</label>
+          <label htmlFor="commitment">COMMITMENT :</label>
           <input
             id="commitment"
             className="inpt-box"
@@ -44,24 +45,21 @@ const UserRegister = () => {
             placeholder="Commitment Amount($)"
           />
         </div>
-        <div className="inpt-div" >
-
-        
-          <label htmlFor="dateOfJoin">Date of Commitment :</label>
+        <div className="inpt-div">
+          <label htmlFor="dateOfJoin">DATE OF COMMITMENT :</label>
           <input
-          className="inpt-box"
+            className="inpt-box"
             id="dateOfJoin"
             onChange={(e) => {
               setDate(e.target.value);
             }}
             type="date"
             value={date}
-        
           />
-          </div>
+        </div>
 
         <button
-        className="submit-btn"
+          className="submit-btn"
           onClick={() => {
             setLpObj({
               name: name,
@@ -69,18 +67,17 @@ const UserRegister = () => {
               dateOfJoin: date,
             });
 
-
-            setLimitedPartners([...limitedPartners, lpObj])
-            console.log(limitedPartners)
+            setLimitedPartners([...limitedPartners, lpObj]);
+            console.log(limitedPartners);
           }}
         >
           Submit
         </button>
       </div>
-<div>
-     <Before lpArr = {limitedPartners} />
-</div>
- 
+      <div>
+        <Before lpArr={limitedPartners} />
+        {/* <Before CRArr={CompanyRegister} /> */}
+      </div>
     </div>
   );
 };

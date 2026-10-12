@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Before.css'
+import "./Before.css";
 import {
   investments,
   newLimitedPartnes,
@@ -9,7 +9,7 @@ import LimitedPatner from "./LimitedPatner";
 import TotalSection from "./TotalSection";
 import Companies from "./Companies";
 
-const Before = ({lpArr}) => {
+const Before = ({ LpArr, CRArr }) => {
   const [limitedPartners, setLimitedPartners] = useState(
     PrevLimitedPartners.concat(newLimitedPartnes),
   );
@@ -39,28 +39,37 @@ const Before = ({lpArr}) => {
     }
   });
 
-  
-
   return (
-    <div className="body" >
-      <div className="top-section" >
- <TotalSection bigObj={limitedPartners} objName="Limited Partners" />
- <TotalSection bigObj={investments} objName = "Companies" />
-
+    <div className="body">
+      <div className="top-section">
+        <TotalSection bigObj={LpArr} objName="Limited Partners" />
+        <TotalSection bigObj={investments} objName="Companies" />
+        {/* <TotalSection bigObj={CRArr} objName="Company Register" /> */}
       </div>
 
       <div className="lp-container">
-     {lpArr === undefined ? <div> waiting </div> :  lpArr.map((elem, index) => {
-          return <LimitedPatner lpDetails={elem} key={index} />;
-        })} 
-       
+        {/* {lpArr === undefined ?
+         ( */}
+        {!Array.isArray(LpArr) ? (
+          <div></div>
+        ) : (
+          LpArr.map((elem, index) => {
+            return <LimitedPatner lpDetails={elem} key={index} />;
+          })
+        )}
+      </div>
 
-          </div>
-        <div>
-          {investments.map((elem, index) => {
+      <div>
+        {/* {CRArr === undefined ? ( */}
+        {!Array.isArray(LpArr) ? (
+          <div></div>
+        ) : (
+          CRArr.map((elem, index) => {
             return <Companies invmtDetails={elem} key={index} />;
-          })}
-        </div>
+          })
+        )}
+        {}
+      </div>
     </div>
   );
 };
