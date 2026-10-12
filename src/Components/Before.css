@@ -66,3 +66,66 @@
  flex-direction: column;
  gap: 20px;
 }
+
+.second-container{
+  
+background-color: white;
+border: 1px solid #D7E7FF ;
+border-radius: 9px;
+
+  padding: 10px;
+   margin: 30px;
+
+
+}
+.lp-container{
+
+    background-color: white;
+    padding: 15px;
+    gap: 15px;
+  
+}
+.lp-container > .heading{
+  display: flex;
+  gap: 20px;
+}
+.lp-card-container{
+  display: flex;
+  gap: 20px ;
+}
+.lp-card{
+
+    padding: 2rem;
+    border: 1px solid #D7E7FF;
+    border-radius: 10px;
+    background-color: white;
+    color: #2563EB;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.4em;
+    animation: display 0.5s ease-in   1 ;
+}
+.lp-card:hover{
+  border: 3px solid #2563EB ;
+}
+.lp-card .name-circle{
+  height: 50px;
+  width: 50px;
+  background-color: #cde1fe;
+  border-radius: 50%;
+}
+.div-2{
+  display: flex;
+}
+
+@keyframes display{
+    from{
+        transform: translateY(35px);
+        opacity: 0.4;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
