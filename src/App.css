@@ -2,26 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.top-section{
-    background-color: #DBEAFE;
 
-    height: 30vh;
-    /* padding: 4rem; */
-    margin-bottom: 1.5rem;
-    border-bottom-left-radius:20%;
-    border-bottom-right-radius:20%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 15px;
-}
-
-.top-card{
-    padding: 40px;
-    background-color: white;
-    /* width: 22vw; */
-    border-radius:12px ;
-}
 
 .lp-container{
     display: flex;

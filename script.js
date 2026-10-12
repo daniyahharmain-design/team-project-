@@ -116,7 +116,7 @@ date1 = new Date(
   PrevLimitedPartners[PrevLimitedPartners.length - 1].DateOfJoin,
 );
 
-// console.log(limitedPartners)
+console.log(limitedPartners)
 
 newLimitedPartnes.forEach((obj) => {
   const date2 = new Date(obj.DateOfJoin);
@@ -146,4 +146,4 @@ PrevLimitedPartners.forEach((obj) => {
   obj.equilization = "+ " + equilizationprofit;
 });
 
-// console.log(PrevLimitedPartners);
+console.log(limitedPartners);
