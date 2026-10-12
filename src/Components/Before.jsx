@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Before.css'
+import "./Before.css";
 import {
   investments,
   newLimitedPartnes,
@@ -9,11 +9,10 @@ import TotalSection from "./TotalSection";
 import Companies from "./Companies";
 import { RiTeamFill } from "@remixicon/react";
 
-const Before = ({LpArr}) => {
-  // const [LpArr, setLpArr] = useState(
-  //   PrevLpArr.concat(newLimitedPartnes),
-  // );
-console.log(LpArr);
+const Before = ({ LpArr, CRArr }) => {
+  const [limitedPartners, setLimitedPartners] = useState(
+    PrevLimitedPartners.concat(newLimitedPartnes),
+  );
 
 // const total = numbers.reduce((sum, current) => sum + current, 0); 
 
@@ -50,8 +49,6 @@ console.log(LpArr);
     }
   });
 
-  
-
   return (
     <div className="body" >
       <div className="top-section" >
@@ -63,24 +60,25 @@ console.log(LpArr);
 
 
       <div className="lp-container">
-        <div className="heading" >
-          <div>  <RiTeamFill size={40} color="#1764E8" /></div>
-           <h2>Limited Partners</h2>
-        </div>
-        <div className="lp-card-container">
-            {LpArr === undefined ? <div> waiting </div> :  LpArr.map((elem, index) => {
-          return <LimitedPatner lpDetails={elem} key={index} />;
-        })} 
+        {/* {lpArr === undefined ?
+         ( */}
+        {!Array.isArray(LpArr) ? (
+          <div></div>
+        ) : (
+          LpArr.map((elem, index) => {
+            return <LimitedPatner lpDetails={elem} key={index} />;
+          })
+        )}
+      </div>
 
-        </div>
-   
-       
-
-          </div>
-        <div>
-          {investments.map((elem, index) => {
+      <div>
+        {/* {CRArr === undefined ? ( */}
+        {!Array.isArray(LpArr) ? (
+          <div></div>
+        ) : (
+          CRArr.map((elem, index) => {
             return <Companies invmtDetails={elem} key={index} />;
-          })}
+          }))}
         </div>
         </div>
     </div>
